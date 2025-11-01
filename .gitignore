@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Emocare.API/appsettings.json
+/Emocare.API/appsettings.json
+
+# Ignore Visual Studio cache folder
+.vs/
+
+# Ignore build artifacts
+bin/
+obj/
+
+# Rider / VS Code workspace files
+.idea/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.vsidx
+*.db

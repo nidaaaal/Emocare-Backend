@@ -1,0 +1,52 @@
+﻿using Emocare.Application.DTOs.Habits;
+using Emocare.Application.Interfaces;
+using Emocare.Infrastructure.Migrations;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Emocare.API.Controllers
+{
+    [Authorize(Roles ="User")]
+    [Route("api/habit")]
+    [ApiController]
+    public class HabitController : ControllerBase
+    {
+        private readonly IHabitServices _habitServices;
+
+        public HabitController(IHabitServices habitServices)
+        {
+            _habitServices = habitServices;
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> UserHabit() => Ok(await _habitServices.GetUserHabitsAsync());
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ById(int id) => Ok(await _habitServices.GetHabitAsync(id));
+
+        [HttpPost]
+        public async Task<IActionResult> Create(AddHabit habit) => Ok(await _habitServices.CreateHabitAsync(habit));
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id,AddHabit habit) => Ok(await _habitServices.UpdateHabitAsync(id,habit));
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> AddReminder(int id, TimeSpan time) => Ok(await _habitServices.AddReminder(id, time));
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id) => Ok(await _habitServices.DeleteHabitAsync(id));
+
+        [HttpGet("{id}/completion")]
+        public async Task<IActionResult> Completion(int id) => Ok(await _habitServices.GetCompletionsAsync(id));
+
+        [HttpPost("{id}/completion")]
+        public async Task<IActionResult> Record(int id,CompletionRequest completion) => Ok(await _habitServices.RecordCompletionAsync(id,completion));
+
+        [HttpGet("{id}/finished")]
+        public async Task<IActionResult> Count(int id) => Ok(await _habitServices.IsFinished(id));
+
+        [HttpGet("{id}/stats")]
+        public async Task<IActionResult> Stats(int id) => Ok(await _habitServices.GetHabitStatsAsync(id));
+    } 
+}
