@@ -44,7 +44,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PasswordHistory");
+                    b.ToTable("PasswordHistory", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Auth.PsychologistProfile", b =>
@@ -92,7 +92,7 @@ namespace Emocare.Infrastructure.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("PsychologistProfiles");
+                    b.ToTable("PsychologistProfiles", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Auth.Users", b =>
@@ -175,7 +175,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Chat.ChatMessage", b =>
@@ -212,7 +212,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("ChatMessage");
+                    b.ToTable("ChatMessage", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Chat.ChatSession", b =>
@@ -231,7 +231,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ChatSession");
+                    b.ToTable("ChatSession", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Email.OtpVerification", b =>
@@ -267,7 +267,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("OtpVerifications");
+                    b.ToTable("OtpVerifications", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Email.VerifiedEmail", b =>
@@ -290,7 +290,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("VerifiedEmail");
+                    b.ToTable("VerifiedEmail", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Habits.Habit", b =>
@@ -339,7 +339,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Habits");
+                    b.ToTable("Habits", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Habits.HabitCategory", b =>
@@ -360,7 +360,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HabitCategories");
+                    b.ToTable("HabitCategories", (string)null);
 
                     b.HasData(
                         new
@@ -420,7 +420,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("HabitId");
 
-                    b.ToTable("HabitCompletion");
+                    b.ToTable("HabitCompletion", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Habits.UserPushSubscription", b =>
@@ -453,7 +453,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPushSubscriptions");
+                    b.ToTable("UserPushSubscriptions", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Journal.JournalEntry", b =>
@@ -492,7 +492,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("JournalEntries");
+                    b.ToTable("JournalEntries", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Payment.Plan", b =>
@@ -519,7 +519,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plans");
+                    b.ToTable("Plans", (string)null);
 
                     b.HasData(
                         new
@@ -569,7 +569,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPlans");
+                    b.ToTable("UserPlans", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Private.ChatParticipant", b =>
@@ -594,7 +594,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ChatParticipants");
+                    b.ToTable("ChatParticipants", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Private.UserChatMessage", b =>
@@ -635,7 +635,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("UserChatMessages");
+                    b.ToTable("UserChatMessages", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Private.UserChatSession", b =>
@@ -649,7 +649,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserChatSessions");
+                    b.ToTable("UserChatSessions", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Tasks.PsychologistTaskAssignment", b =>
@@ -686,7 +686,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("WellnessTaskId");
 
-                    b.ToTable("PsychologistTaskAssignments");
+                    b.ToTable("PsychologistTaskAssignments", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Tasks.UserDailyTask", b =>
@@ -716,7 +716,7 @@ namespace Emocare.Infrastructure.Migrations
                     b.HasIndex("UserId", "WellnessTaskId", "DateAssigned")
                         .IsUnique();
 
-                    b.ToTable("UserDailyTasks");
+                    b.ToTable("UserDailyTasks", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Tasks.UserDailyTaskByPsychologist", b =>
@@ -740,7 +740,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("PsychologistTaskAssignmentId");
 
-                    b.ToTable("UserDailyTaskByPsychologists");
+                    b.ToTable("UserDailyTaskByPsychologists", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Tasks.UserStreak", b =>
@@ -764,7 +764,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserStreaks");
+                    b.ToTable("UserStreaks", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Tasks.WellnessTask", b =>
@@ -832,7 +832,7 @@ namespace Emocare.Infrastructure.Migrations
 
                     b.HasIndex("CreatedByPsychologistId");
 
-                    b.ToTable("WellnessTasks");
+                    b.ToTable("WellnessTasks", (string)null);
                 });
 
             modelBuilder.Entity("Emocare.Domain.Entities.Auth.PasswordHistory", b =>

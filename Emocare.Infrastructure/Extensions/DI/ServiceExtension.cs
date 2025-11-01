@@ -37,7 +37,9 @@ namespace Emocare.Infrastructure.Extensions.DI
         public static void ConfigureDbContext(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+            sql => sql.EnableRetryOnFailure()
+    ));
 
         }
         public static void ConfigureRepository(this IServiceCollection services)
