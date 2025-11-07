@@ -65,7 +65,7 @@ namespace Emocare.Infrastructure.Extensions.Auth
                 options.AddPolicy("AdminOnly", policy =>
                     policy.RequireRole("Admin"));
                 options.AddPolicy("Protected", policy =>
-                    policy.RequireRole("Admin","Psychologist"));
+                    policy.RequireRole("Admin", "Psychologist"));
             });
 
             services.AddCors(options =>
