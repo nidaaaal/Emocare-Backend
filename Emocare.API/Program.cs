@@ -26,16 +26,6 @@ namespace Emocare.API
             builder.Services.AddSwaggerWithJwt();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddSingleton<IRazorLightEngine>(serviceProvider =>
-            {
-                var env = serviceProvider.GetRequiredService<IWebHostEnvironment>();
-                var templatesPath = Path.Combine(env.ContentRootPath, "Templates");
-
-                return new RazorLightEngineBuilder()
-                    .UseFileSystemProject(templatesPath)
-                    .UseMemoryCachingProvider()
-                    .Build();
-            });
             builder.Services.ConfigureMapProfile(); 
             builder.Services.ConfigureRepository();
             builder.Services.ConfigureHelper(); 

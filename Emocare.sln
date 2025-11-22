@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emocare.Infrastructure", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emocare.Shared", "Emocare.Shared\Emocare.Shared.csproj", "{4D23AAC0-3A29-8A70-385A-667F6E59F338}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emocare.Tests", "Emocare.Tests\Emocare.Tests.csproj", "{4660B9AC-E7F5-4931-A0CD-138BD0BB78F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4D23AAC0-3A29-8A70-385A-667F6E59F338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D23AAC0-3A29-8A70-385A-667F6E59F338}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D23AAC0-3A29-8A70-385A-667F6E59F338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4660B9AC-E7F5-4931-A0CD-138BD0BB78F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4660B9AC-E7F5-4931-A0CD-138BD0BB78F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4660B9AC-E7F5-4931-A0CD-138BD0BB78F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4660B9AC-E7F5-4931-A0CD-138BD0BB78F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

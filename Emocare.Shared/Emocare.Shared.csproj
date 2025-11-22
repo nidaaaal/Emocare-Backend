@@ -13,10 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Views\OtpEmail.cshtml">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </EmbeddedResource>
+    <None Remove="Views\OtpEmail.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\SimpleEmail.cshtml" />
+    <EmbeddedResource Include="Views\OtpEmail.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
