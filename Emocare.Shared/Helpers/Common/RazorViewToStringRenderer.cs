@@ -12,8 +12,7 @@ namespace Emocare.Shared.Helpers.Common
 
         public RazorViewToStringRenderer()
         {
-            // 1. Define the specific namespace where your templates live.
-            // Format: AssemblyName.FolderName.SubFolderName
+        
             var rootNamespace = "Emocare.Shared.Views";
 
             _razorEngine = new RazorLightEngineBuilder()
@@ -24,8 +23,6 @@ namespace Emocare.Shared.Helpers.Common
 
         public async Task<string> RenderViewToStringAsync<TModel>(string viewName, TModel model)
         {
-            // 2. With Embedded Resources, the key is just the file name.
-            // Ensure viewName matches the file exactly (e.g., "OtpEmailView").
             var templateKey = $"{viewName}.cshtml";
 
             return await _razorEngine.CompileRenderAsync(templateKey, model);

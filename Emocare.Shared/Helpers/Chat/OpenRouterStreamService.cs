@@ -70,7 +70,7 @@ namespace Emocare.Shared.Helpers.Chat
                 var payload =
                 new
                 {
-                    model = "deepseek/deepseek-chat-v3-0324:free",
+                    model = "x-ai/grok-4.1-fast:free",
 
                     //"openrouter/horizon-alpha"
                     stream = true,
