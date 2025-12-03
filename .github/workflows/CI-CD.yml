@@ -26,4 +26,4 @@ jobs:
       run: dotnet build Emocare.sln --configuration Release --no-restore
 
     - name: Run Tests
-      run: dotnet test Emocare.Tests/Emocare.Tests.csproj --no-build --verbosity normal
+      run: dotnet test Emocare.Tests/Emocare.Tests.csproj --configuration Release --verbosity normal
