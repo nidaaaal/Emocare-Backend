@@ -1,4 +1,4 @@
-name: Emocare - CI/CD Pipeline
+name: Emocare - CI Pipeline
 
 on:
   push:
@@ -9,17 +9,17 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
-steps:
+    
+    steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: "8.0.x"
 
- - name: Restore Dependencies
+    - name: Restore Dependencies
       run: dotnet restore Emocare.sln
 
     - name: Build Solution
@@ -27,15 +27,3 @@ steps:
 
     - name: Run Tests
       run: dotnet test Emocare.Tests/Emocare.Tests.csproj --no-build --verbosity normal
-
-    - name: Publish API
-      run: dotnet publish Emocare.API/Emocare.API.csproj -c Release -o ./publish
-
-    - name: Upload Build
-      uses: actions/upload-artifact@v3
-      with:
-        name: emocare-build
-        path: publish/
-
-- name: Docker Build
-      run: docker build -t emocare-api .
