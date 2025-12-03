@@ -26,7 +26,7 @@ namespace Emocare.API.Controllers
             {
                 HttpOnly = true,
                 Secure = false,
-                SameSite = SameSiteMode.Lax,
+                SameSite = SameSiteMode.None,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
 
             });
